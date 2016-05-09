@@ -33,7 +33,7 @@ public class LoginActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_main_menu);
 
         if(PrefUtils.getCurrentUser(LoginActivity.this) != null){
 
@@ -56,7 +56,7 @@ public class LoginActivity extends Activity {
 
         loginButton.setReadPermissions("public_profile", "email","user_friends");
 
-        //btnLogin= (TextView) findViewById(R.id.btnLogin);
+        btnLogin= (TextView) findViewById(R.id.btnLogin);
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

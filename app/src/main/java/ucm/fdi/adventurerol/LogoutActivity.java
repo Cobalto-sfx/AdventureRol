@@ -28,9 +28,9 @@ public class LogoutActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //setContentView(R.layout.activity_logout);
+        setContentView(R.layout.activity_logout);
         user=PrefUtils.getCurrentUser(LogoutActivity.this);
-        //profileImage= (ImageView) findViewById(R.id.profileImage);
+        profileImage= (ImageView) findViewById(R.id.profileImage);
 
         // fetching facebook's profile picture
         new AsyncTask<Void,Void,Void>(){
@@ -59,7 +59,7 @@ public class LogoutActivity extends Activity {
         }.execute();
 
 
-        //btnLogout = (TextView) findViewById(R.id.btnLogout);
+        btnLogout = (TextView) findViewById(R.id.btnLogout);
         btnLogout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -70,7 +70,7 @@ public class LogoutActivity extends Activity {
                 LoginManager.getInstance().logOut();
 
 
-                Intent i= new Intent(LogoutActivity.this,LoginActivity.class);
+                Intent i= new Intent(LogoutActivity.this,MainMenu.class);
                 startActivity(i);
                 finish();
             }
